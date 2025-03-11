@@ -17,7 +17,7 @@ export const RevealOnScroll = ({ children }) => {
 
     return () => observer.disconnect();
   });
-
+ 
   return (
     <div ref={ref} className="reveal">
       {children}

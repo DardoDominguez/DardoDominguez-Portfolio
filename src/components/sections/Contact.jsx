@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { RevealOnScroll } from "../RevealOnScroll";
-import emailjs from "emailjs-com";
+import  emailjs  from "emailjs-com";
 
 export const Contact = () => {
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -12,20 +13,25 @@ export const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    emailjs
-      .sendForm(
+    console.log(e.target);
+    emailjs.sendForm( 
         import.meta.env.VITE_SERVICE_ID,
         import.meta.env.VITE_TEMPLATE_ID,
         e.target,
         import.meta.env.VITE_PUBLIC_KEY
       )
       .then((result) => {
-        alert("Message Sent!");
+        alert("Tu mensaje ha sido enviado!");
         setFormData({ name: "", email: "", message: "" });
       })
-      .catch(() => alert("Oops! Something went wrong. Please try again."));
+      .catch(() => { 
+        alert("Ups! Hubo un error y su mensaje no fue enviado. Por favor, intente de nuevo.");
+      });
   };
 
+console.log("SERVICE_ID:", import.meta.env.VITE_SERVICE_ID);
+console.log("TEMPLATE_ID:", import.meta.env.VITE_TEMPLATE_ID);
+console.log("PUBLIC_KEY:", import.meta.env.VITE_PUBLIC_KEY);
   return (
     <section
       id="contact"
@@ -35,18 +41,19 @@ export const Contact = () => {
         <div className="px-4 w-full min-w-[300px] md:w-[500px] sm:w-2/3 p-6">
           <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">
             {" "}
-            Get In Touch
+            Pongámonos en Contacto
           </h2>
           <form className="space-y-6" onSubmit={handleSubmit}>
             <div className="relative">
               <input
                 type="text"
-                id="name"
-                name="name"
+                id="from_name"
+                name="from_name"
                 required
+                autoComplete="name"
                 value={formData.name}
                 className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/5"
-                placeholder="Name..."
+                placeholder="Escribe tu nombre aquí..."
                 onChange={(e) =>
                   setFormData({ ...formData, name: e.target.value })
                 }
@@ -59,9 +66,10 @@ export const Contact = () => {
                 id="email"
                 name="email"
                 required
+                autoComplete="email"
                 value={formData.email}
                 className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/5"
-                placeholder="example@gmail.com"
+                placeholder="Escribe tu email aquí: juanperez@gmail.com"
                 onChange={(e) =>
                   setFormData({ ...formData, email: e.target.value })
                 }
@@ -73,10 +81,11 @@ export const Contact = () => {
                 id="message"
                 name="message"
                 required
+                autoComplete="off"
                 rows={5}
                 value={formData.message}
                 className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/5"
-                placeholder="Your Message..."
+                placeholder="Escribe tu mensaje aquí..."
                 onChange={(e) =>
                   setFormData({ ...formData, message: e.target.value })
                 }
@@ -87,7 +96,7 @@ export const Contact = () => {
               type="submit"
               className="w-full bg-blue-500 text-white py-3 px-6 rounded font-medium transition relative overflow-hidden hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,130,246,0.4)]"
             >
-              Send Message
+              Enviar mensaje
             </button>
           </form>
         </div>
