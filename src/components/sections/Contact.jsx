@@ -29,9 +29,9 @@ export const Contact = () => {
       });
   };
 
-console.log("SERVICE_ID:", import.meta.env.VITE_SERVICE_ID);
-console.log("TEMPLATE_ID:", import.meta.env.VITE_TEMPLATE_ID);
-console.log("PUBLIC_KEY:", import.meta.env.VITE_PUBLIC_KEY);
+if (!import.meta.env.VITE_SERVICE_ID || !import.meta.env.VITE_TEMPLATE_ID || !import.meta.env.VITE_PUBLIC_KEY) {
+  console.error("Missing EmailJS environment variables. Please check your .env file.");
+}
   return (
     <section
       id="contact"
@@ -47,8 +47,8 @@ console.log("PUBLIC_KEY:", import.meta.env.VITE_PUBLIC_KEY);
             <div className="relative">
               <input
                 type="text"
-                id="from_name"
-                name="from_name"
+                id="name"
+                name="name"
                 required
                 autoComplete="name"
                 value={formData.name}
