@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { RevealOnScroll } from "../RevealOnScroll";
 import  emailjs  from "emailjs-com";
 
@@ -20,7 +20,7 @@ export const Contact = () => {
         e.target,
         import.meta.env.VITE_PUBLIC_KEY
       )
-      .then((result) => {
+      .then(() => {
         alert("Tu mensaje ha sido enviado!");
         setFormData({ name: "", email: "", message: "" });
       })
