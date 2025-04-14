@@ -166,7 +166,7 @@ export const Projects = () => {
                 Tu navegador no soporta la reproducción de videos.
               </video>
               <div className="flex flex-wrap gap-2 mb-4">
-                {["Socket.IO", "Express", "React", "Redis"].map((tech, key) => (
+                {["Excel", "Power Query", "Power Pivot"].map((tech, key) => (
                   <span
                     key={key}
                     className="
