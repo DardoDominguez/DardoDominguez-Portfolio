@@ -19,6 +19,13 @@ export const Projects = () => {
               El proyecto consiste en la creación de un CRM Básico que facilita el análisis de ventas, 
               el rendimiento de los empleados y las tendencias de un negocio mediante dashboards intuitivos y personalizados.
               </p>
+              <video
+                className="w-full rounded-lg mb-4"
+                controls
+                src="/path/to/crm-basico.mp4"
+              >
+                Tu navegador no soporta la reproducción de videos.
+              </video>
               <div className="flex flex-wrap gap-2 mb-4">
                 {["Microsoft Excel", "Power BI"].map((tech, key) => (
                   <span
@@ -56,6 +63,13 @@ export const Projects = () => {
               específicamente en el tiempo de reacción, 
               proporcionando insights valiosos para mejorar la toma de decisiones en contextos de alta exigencia mental.
               </p>
+              <video
+                className="w-full rounded-lg mb-4"
+                controls
+                src="/path/to/analisis-cognitivo.mp4"
+              >
+                Tu navegador no soporta la reproducción de videos.
+              </video>
               <div className="flex flex-wrap gap-2 mb-4">
                 {["SQL", "Microsoft Excel", "Power BI"].map((tech, key) => (
                   <span
@@ -95,6 +109,13 @@ export const Projects = () => {
               <p className="text-gray-400 mb-4">
                 Estado de Resultados realizado para Grupo Empresarial.
               </p>
+              <video
+                className="w-full rounded-lg mb-4"
+                controls
+                src="/path/to/estado-resultados.mp4"
+              >
+                Tu navegador no soporta la reproducción de videos.
+              </video>
               <div className="flex flex-wrap gap-2 mb-4">
                 {["Microsoft Excel"].map(
                   (tech) => (
@@ -119,11 +140,11 @@ export const Projects = () => {
                   target="_blank"
                   className="text-blue-400 hover:text-blue-300 transition-colors my-4"
                 >
-                  View Project →
+                  Ver Proyecto →
                 </a>
               </div>
             </div>
-{/*
+
             <div
               className="
               glass p-6 rounded-xl border border-white/10 
@@ -132,11 +153,18 @@ export const Projects = () => {
               transition-all
             "
             >
-              <h3 className="text-xl font-bold mb-2">Real-Time Chat App</h3>
+              <h3 className="text-xl font-bold mb-2">Dashboard Dinámico en Microsoft Excel</h3>
               <p className="text-gray-400 mb-4">
-                Scalable chat platform supporting real-time messaging, presence,
-                and group chat features.
+                Dashboard dinámico en Excel para empresa de ingeniería, que permite
+                analizar y visualizar datos de manera interactiva, facilitando la toma de decisiones informadas.
               </p>
+              <video
+                className="w-full rounded-lg mb-4"
+                controls
+                src="C:\Users\Dardo\Downloads\202504140953.mp4"
+              >
+                Tu navegador no soporta la reproducción de videos.
+              </video>
               <div className="flex flex-wrap gap-2 mb-4">
                 {["Socket.IO", "Express", "React", "Redis"].map((tech, key) => (
                   <span
@@ -158,11 +186,11 @@ export const Projects = () => {
                   href="#"
                   className="text-blue-400 hover:text-blue-300 transition-colors my-4"
                 >
-                  View Project →
+                  Ver Proyecto →
                 </a>
               </div>
             </div> 
-  */}
+
           </div>
         </div>
       </RevealOnScroll>
